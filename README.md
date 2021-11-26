@@ -1,4 +1,4 @@
-# BancaBasica
+# Proyecto Banca Básica
 
 Proyecto en .Net Core 5
 
