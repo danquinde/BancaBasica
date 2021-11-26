@@ -136,7 +136,7 @@ namespace BancaBasica.WebApp.Controllers
                 if (cuenta.Saldo < 0)
                 {
                     TempData["mensajeError"] = $"Error, el Saldo de la cuenta {cuenta.Numero} no puede quedar en negativo";
-                    return RedirectToAction(nameof(Create));
+                    return RedirectToAction(nameof(Edit);
                 }
 
                 _context.Cuenta.Update(cuenta);
@@ -195,6 +195,12 @@ namespace BancaBasica.WebApp.Controllers
 
                 var cuenta = SaldoCuentaAlEliminar(data);
 
+                if (cuenta.Saldo < 0)
+                {
+                    TempData["mensajeError"] = $"Error, el Saldo de la cuenta {cuenta.Numero} no puede quedar en negativo";
+                    return RedirectToAction(nameof(Delete);
+                }
+                
                 _context.Cuenta.Update(cuenta);
 
                 _context.Movimiento.Update(data);
